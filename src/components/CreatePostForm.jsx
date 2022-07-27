@@ -13,6 +13,7 @@ export const CreatePostForm = () => {
     likes: 0,
     ign: user.ign,
     created: new Date(),
+    comments: []
   });
   
   const createPost = () => {

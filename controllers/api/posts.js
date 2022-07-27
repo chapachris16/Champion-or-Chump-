@@ -5,7 +5,8 @@ module.exports = {
     find,
     findOne,
     remove,
-    edit
+    edit,
+    createComment,
 }
 
 async function create(req, res) {
@@ -47,6 +48,16 @@ async function edit(req, res) {
         )
         res.json(game)
     } catch (err) {
+        res.status(400).json(err)
+    }
+}
+async function createComment(req, res) {
+    try {
+        const post = await Post.findById(req.params.postId)
+        post.comments.push(req.body)
+        post.save()
+    }
+    catch (err){
         res.status(400).json(err)
     }
 }

@@ -6,6 +6,8 @@ router.post('/', postsCtrl.create)
 router.get('/', postsCtrl.find)
 router.get('/:postId', postsCtrl.findOne)
 router.delete('/:postId', postsCtrl.remove)
+router.post('/:postId/comments', postsCtrl.createComment)
 router.put('/:postId/edit', postsCtrl.edit)
+
 
 module.exports = router;
