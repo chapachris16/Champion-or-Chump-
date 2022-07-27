@@ -7,7 +7,6 @@ import NavBar from '../../components/NavBar';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
-import { Comments } from '../../components/Comments';
 import PostListPage from '../PostList/PostListPage';
 import { CreatePostForm } from '../../components/CreatePostForm';
 
@@ -27,7 +26,6 @@ export default function App() {
             <Route path='/posts/create' element={<CreatePostForm/>} />
             <Route path='/posts/:postId' element={<PostDetail/>} />
           </Routes>
-          <Comments/>
         </>
         :
         <AuthPage setUser={setUser}/>

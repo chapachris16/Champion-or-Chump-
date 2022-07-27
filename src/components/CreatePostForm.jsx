@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // const axios = require('axios').default
 export const CreatePostForm = () => {
   const [form, setForm] = useState({
@@ -53,7 +54,7 @@ export const CreatePostForm = () => {
           name="created"
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <Link to ={'/posts'}><button type="submit">SUBMIT</button></Link>
       </form>
     </>
   );
