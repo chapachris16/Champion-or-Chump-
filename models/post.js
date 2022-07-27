@@ -18,6 +18,7 @@ const PostSchema = new Schema(
         title:{type:String, required: true},
         content: {type:String, required: true},
         likes: {type:Number, default:0},
+        ign: {type: String},
         // comments: [commentSchema]
         created: {
                     type:Date,

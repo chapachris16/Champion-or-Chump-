@@ -2,16 +2,19 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { getUser } from "../utilities/users-service";
 // const axios = require('axios').default
 export const CreatePostForm = () => {
+  const [user, setUser] = useState(getUser())
   const navigate = useNavigate()
   const [form, setForm] = useState({
     title: "",
     content: "",
     likes: 0,
+    ign: user.ign,
     created: new Date(),
   });
-
+  
   const createPost = () => {
     axios.post("/api/posts", form).then((result) => {
       console.log(result);
@@ -27,7 +30,7 @@ export const CreatePostForm = () => {
     createPost();
     navigate('/posts')
     
-    setForm({ title: "", content: "", likes: 0, created: new Date() });
+    setForm({ title: "", content: "", likes: 0, ign: user.ign,created: new Date() });
   };
 
   
@@ -39,6 +42,12 @@ export const CreatePostForm = () => {
           type="text"
           value={form.title}
           name="title"
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          value={form.ign}
+          name="ign"
           onChange={handleChange}
         />
         <input
