@@ -21,10 +21,14 @@ export const PostDetail = () => {
     }, [])
 
     const deletePost = async () => {
-        axios.delete(`/api/posts/${postId}`).then((deleted) => {
-            console.log(deleted)
-        })
-        navigate('/posts')
+        if(user.ign === post.ign) {
+            axios.delete(`/api/posts/${postId}`).then((deleted) => {
+                console.log(deleted)
+            })
+            navigate('/posts')
+    } else {
+        alert('you are not the post author')
+    }
     }
 
     const renderEditForm = () => {
@@ -53,8 +57,14 @@ export const PostDetail = () => {
         )
       })} <button onClick={renderCommentForm}>add comment</button></>}
         <p>{post.likes}</p>
+        { user.ign === post.ign ?
+        <>
         <button onClick={deletePost}>Delete Post</button>
         <button onClick={renderEditForm}>Edit Post</button>
+        </>
+        :
+        <></>
+}
     </>
     }
     </>
