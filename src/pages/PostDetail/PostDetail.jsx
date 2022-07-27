@@ -13,8 +13,12 @@ export const PostDetail = () => {
             setPost(foundPost.data)
         });
     }, [])
-
-    const editForm = () => {
+    const editPost = async () => {
+        await axios.put(`/api/posts/${postId}/edit`, post).then((edited) => {
+            console.log(edited)
+        })
+    }
+    const renderEditForm = () => {
         
         // if (user.email === game.email) {
             setEdit(true)
@@ -31,13 +35,58 @@ export const PostDetail = () => {
         navigate('/posts')
     }
 
+    function handleSubmit(e) {
+        e.preventDefault()
+        editPost()
+        setEdit(false)
+        
+    }
+
+    function handleChange(e) {
+        setPost({ ...post, [e.target.name]: e.target.value });
+    }
+
     if (!post) return null
   return (
+    
+    <>
+    {edit ? <form onSubmit={handleSubmit}>
+        Title
+        <input
+          type="text"
+          value={post.title}
+          name="title"
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          value={post.content}
+          name="content"
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          value={post.likes}
+          name="likes"
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          value={post.created}
+          name="created"
+          onChange={handleChange}
+        />
+        <button type="submit">SUBMIT</button>
+      </form>
+    :
     <>
         <h2>{post.title}</h2>
         <p>{post.content}</p>
         <p>{post.likes}</p>
         <button onClick={deletePost}>Delete Post</button>
+        <button onClick={renderEditForm}>Edit Post</button>
+    </>
+    }
     </>
   )
 }

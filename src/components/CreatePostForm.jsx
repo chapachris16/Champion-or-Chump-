@@ -12,7 +12,7 @@ export const CreatePostForm = () => {
     created: new Date(),
   });
 
-  function createPost() {
+  const createPost = () => {
     axios.post("/api/posts", form).then((result) => {
       console.log(result);
     });
@@ -29,6 +29,8 @@ export const CreatePostForm = () => {
     
     setForm({ title: "", content: "", likes: 0, created: new Date() });
   };
+
+  
   return (
     <>
       <form onSubmit={handleSubmit}>
