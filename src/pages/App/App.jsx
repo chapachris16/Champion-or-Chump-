@@ -2,6 +2,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../PostList/PostListPage';
+import { PostDetail } from '../PostDetail/PostDetail';
 import NavBar from '../../components/NavBar';
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
@@ -24,6 +25,7 @@ export default function App() {
             <Route path='/orders/new' element={<NewOrderPage/>} />
             <Route path='/posts' element={<PostListPage/>} />
             <Route path='/posts/create' element={<CreatePostForm/>} />
+            <Route path='/posts/:postId' element={<PostDetail/>} />
           </Routes>
           <Comments/>
         </>
