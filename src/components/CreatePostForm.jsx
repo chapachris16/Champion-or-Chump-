@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // const axios = require('axios').default
 export const CreatePostForm = () => {
+  const navigate = useNavigate()
   const [form, setForm] = useState({
     title: "",
     content: "",
@@ -24,6 +25,8 @@ export const CreatePostForm = () => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     createPost();
+    navigate('/posts')
+    
     setForm({ title: "", content: "", likes: 0, created: new Date() });
   };
   return (
@@ -54,7 +57,7 @@ export const CreatePostForm = () => {
           name="created"
           onChange={handleChange}
         />
-        <Link to ={'/posts'}><button type="submit">SUBMIT</button></Link>
+        <button type="submit">SUBMIT</button>
       </form>
     </>
   );
