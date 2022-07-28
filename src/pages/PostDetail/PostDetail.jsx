@@ -68,8 +68,8 @@ export const PostDetail = () => {
             </ul>
         )
       })} <button onClick={renderCommentForm}>add comment</button></>}
-        <p>{post.likes}</p>
-        <p>{post.dislikes}</p>
+        <p>Likes:{post.likes}</p>
+        <p>DislikesL{post.dislikes}</p>
         { user.ign === post.ign ?
         <>
         <button onClick={deletePost}>Delete Post</button>

@@ -57,20 +57,19 @@ async function deleteComment(req, res) {
       res.json({ error });
     }); 
 }
+
 // async function editComment(req, res) {
-//   Post.findById(req.params.postId)
-//     .then((post) => {
-//       const comment = post.comments;
-//       console.log(comment);
-//       let index = comment.findIndex((comments) => comments.id === req.params.commentId);
-//      comment.splice(index,1, req.body)
-//      post.save()
-//       res.json('deleted');
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       res.json({ error });
-//     });
+//     try {
+//         const post = await Post.findByIdAndUpdate(
+//             req.params.postId,
+//             index = post.comments((comment) => comments.id === req.params.commentId),
+//             {$set: {post.comments[index]: 1}},
+//             {new: true}
+//         )
+//         res.json(post)
+//     } catch (err) {
+//         res.status(400).json(err)
+//     }
 // }
 
 async function findComment(req, res) {
