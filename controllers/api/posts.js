@@ -11,6 +11,7 @@ module.exports = {
     deleteComment,
     // editComment
     likePost,
+    dislikePost
 }
 
 async function create(req, res) {
@@ -46,16 +47,15 @@ async function deleteComment(req, res) {
     .then((post) => {
       const comment = post.comments;
       console.log(comment);
-    //   let index = comment.findIndex((comments) => comments.id === req.params.commentId);
-      comment.findByIdAndRemove(commentId)
-    //  comment.splice(index,1)
+      let index = comment.findIndex((comments) => comments.id === req.params.commentId);
+     comment.splice(index,1)
      post.save()
       res.json('deleted');
     })
     .catch((error) => {
       console.log(error);
       res.json({ error });
-    });
+    }); 
 }
 // async function editComment(req, res) {
 //   Post.findById(req.params.postId)
@@ -99,6 +99,30 @@ async function edit(req, res) {
             {new: true}
         )
         res.json(game)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+async function likePost(req, res) {
+    try {
+        const post = await Post.findByIdAndUpdate(
+            req.params.postId,
+            {$inc: {likes: 1}},
+            {new: true}
+        )
+        res.json(post)
+    } catch (err) {
+        res.status(400).json(err)
+    }
+}
+async function dislikePost(req, res) {
+    try {
+        const post = await Post.findByIdAndUpdate(
+            req.params.postId,
+            {$inc: {dislikes: 1}},
+            {new: true}
+        )
+        res.json(post)
     } catch (err) {
         res.status(400).json(err)
     }

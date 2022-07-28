@@ -12,6 +12,7 @@ router.delete('/:postId/comments/:commentId', postsCtrl.deleteComment)
 // router.put('/:postId/comments/:commentId', postsCtrl.editComment)
 router.put('/:postId/edit', postsCtrl.edit)
 router.put('/:postId/edit/like', postsCtrl.likePost)
+router.put('/:postId/edit/dislike', postsCtrl.dislikePost)
 
 
 module.exports = router;
