@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
@@ -51,7 +51,7 @@ export const PostDetail = () => {
          {comment ? <CreateCommentForm/> : <>{post.comments.map((post) => { 
         return (
             <ul key={post.id}>
-                <li >written by {post.author}</li>
+                <Link to={`/posts/${postId}/comments/${post._id}`}><li >written by {post.author}</li></Link>
                 <li >{post.content}</li>
             </ul>
         )

@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import PostListPage from '../PostList/PostListPage';
 import { CreatePostForm } from '../../components/CreatePostForm';
-
+import { CommentDetail } from '../CommentDetail/CommentDetail';
 
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
             <Route path='/posts' element={<PostListPage/>} />
             <Route path='/posts/create' element={<CreatePostForm/>} />
             <Route path='/posts/:postId' element={<PostDetail/>} />
+            <Route path='/posts/:postId/comments/:commentId' element={<CommentDetail/>} />
           </Routes>
         </>
         :

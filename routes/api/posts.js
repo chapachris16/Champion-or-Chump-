@@ -7,6 +7,8 @@ router.get('/', postsCtrl.find)
 router.get('/:postId', postsCtrl.findOne)
 router.delete('/:postId', postsCtrl.remove)
 router.post('/:postId/comments', postsCtrl.createComment)
+router.get('/:postId/comments/:commentId', postsCtrl.findComment)
+router.delete('/:postId/comments/:commentId', postsCtrl.deleteComment)
 router.put('/:postId/edit', postsCtrl.edit)
 
 

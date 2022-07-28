@@ -7,6 +7,8 @@ module.exports = {
     remove,
     edit,
     createComment,
+    findComment,
+    deleteComment
 }
 
 async function create(req, res) {
@@ -28,7 +30,7 @@ async function find(req, res) {
 }
 async function findOne(req, res) {
     try {
-        console.log(req.params.gameId)
+        console.log(req.params.postId)
         const post = await Post.findById(req.params.postId)
         res.json(post)
 
@@ -37,6 +39,37 @@ async function findOne(req, res) {
     }
 
 }
+async function deleteComment(req, res) {
+  Post.findById(req.params.postId)
+    .then((post) => {
+      const comment = post.comments;
+      console.log(comment);
+      let index = comment.findIndex((comments) => comments.id === req.params.commentId);
+     comment.splice(index,1)
+     post.save()
+      res.json('deleted');
+    })
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+}
+async function findComment(req, res) {
+  Post.findById(req.params.postId)
+    .then((post) => {
+      const comment = post.comments;
+      console.log(comment);
+      let index = comment.findIndex((comments) => comments.id === req.params.commentId);
+      console.log(index);
+      console.log(post.comments[index]);
+      res.json({post, index});
+    })
+    .catch((error) => {
+      console.log(error);
+      res.json({ error });
+    });
+}
+
 
 async function edit(req, res) {
     console.log('body',req.body)
