@@ -9,7 +9,9 @@ router.delete('/:postId', postsCtrl.remove)
 router.post('/:postId/comments', postsCtrl.createComment)
 router.get('/:postId/comments/:commentId', postsCtrl.findComment)
 router.delete('/:postId/comments/:commentId', postsCtrl.deleteComment)
+// router.put('/:postId/comments/:commentId', postsCtrl.editComment)
 router.put('/:postId/edit', postsCtrl.edit)
+router.put('/:postId/edit/like', postsCtrl.likePost)
 
 
 module.exports = router;

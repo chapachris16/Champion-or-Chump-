@@ -19,7 +19,12 @@ export const PostDetail = () => {
             setPost(foundPost.data)
         });
     }, [])
-
+    
+    const likePost = async () => {
+            axios.put(`/api/posts/${postId}/edit/like`).then((liked) => {
+                console.log(liked)
+            })
+    }
     const deletePost = async () => {
         if(user.ign === post.ign) {
             axios.delete(`/api/posts/${postId}`).then((deleted) => {
@@ -48,6 +53,7 @@ export const PostDetail = () => {
         <h2>{post.title}</h2>
         <h2>{post.ign}</h2>
         <p>{post.content}</p>
+        <button onClick={likePost}>Like Post</button>
          {comment ? <CreateCommentForm/> : <>{post.comments.map((post) => { 
         return (
             <ul key={post.id}>
