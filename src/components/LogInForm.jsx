@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import * as usersService from '../utilities/users-service';
-
+import {Form, Button} from 'react-bootstrap'
 export default function LoginForm({ setUser }) {
   const [credentials, setCredentials] = useState({
     email: '',
@@ -30,17 +30,35 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
-      <div className="form-container" onSubmit={handleSubmit}>
-        <form autoComplete="off" >
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
-        </form>
-      </div>
-      <p className="error-message">&nbsp;{error}</p>
-    </div>
+    // <div>
+    //   <div className="form-container" onSubmit={handleSubmit}>
+    //     <form autoComplete="off" >
+    //       <label>Email</label>
+    //       <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
+    //       <label>Password</label>
+    //       <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
+    //       <button type="submit">LOG IN</button>
+    //     </form>
+    //   </div>
+    //   <p className="error-message">&nbsp;{error}</p>
+    // </div>
+    <Form onSubmit={handleSubmit}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control type="email" name='email' value={credentials.email} placeholder="Enter email" onChange={handleChange} />
+        <Form.Text className="text-muted">
+          We'll never share your email with anyone else.
+        </Form.Text>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Password</Form.Label>
+        <Form.Control type="password" name='password' value={credentials.password}placeholder="Password" onChange={handleChange} />
+      </Form.Group>
+      
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
   );
 }
