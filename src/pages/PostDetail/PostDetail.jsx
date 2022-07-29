@@ -68,7 +68,7 @@ export const PostDetail = () => {
          {comment ? <CreateCommentForm/> : <>{post.comments.map((post) => { 
         return (
             <div key={post.id}>
-                <h4>written by {post.author}</h4>
+                <h6>{post.author} commented</h6>
                 <Link className='commentLink'to={`/posts/${postId}/comments/${post._id}`}>{post.content}</Link>
                 
             </div>

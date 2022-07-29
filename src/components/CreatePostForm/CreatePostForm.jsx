@@ -15,7 +15,8 @@ export const CreatePostForm = () => {
     likes: 0,
     ign: user.ign,
     created: new Date(),
-    comments: []
+    comments: [],
+    tag: 'driving'
   });
   
   const createPost = () => {
@@ -45,6 +46,12 @@ export const CreatePostForm = () => {
         <input
           type="text"
           value={form.title}
+          name="title"
+          onChange={handleChange}
+        />
+        <input
+          type="hidden"
+          value={form.tag}
           name="title"
           onChange={handleChange}
         />

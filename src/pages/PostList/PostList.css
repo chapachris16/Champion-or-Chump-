@@ -5,11 +5,11 @@ h1{
 body{text-align: left;}
 
 .navLink{
-    color: lavender;
+    color: black;
     font-family: 'Lato', sans-serif ;
 }
 
 .body{ 
     text-align: left;
-    background-color: slategray;
+    background-color: white;
 }

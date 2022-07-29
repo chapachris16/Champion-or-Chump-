@@ -13,7 +13,7 @@
 .author{
     background-color: #5A626A;
     color: white;
-    margin-right: 75%;;
+    text-align: center;
 }
 h2{
     text-align: left;
@@ -21,14 +21,12 @@ h2{
 
 p{
     text-align: left;
-    
+    font-size: 30px;
 }
 
-.body{
-    background-color: slategray;
-}
+
 
 .commentLink{
-    color: gold;
+    color: black;
 }
 
