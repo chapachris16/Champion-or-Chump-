@@ -32,7 +32,7 @@ export const CommentDetail = () => {
   };
   if (!comment) return null;
   return (
-    <>
+    <body>
     {/* {editForm? <form>
       <input type='hidden' name="author"></input>
       <input type='text' name="content"></input>
@@ -50,6 +50,6 @@ export const CommentDetail = () => {
       )}
     </>
       {/* } */}
-      </>
+      </body>
   );
 };

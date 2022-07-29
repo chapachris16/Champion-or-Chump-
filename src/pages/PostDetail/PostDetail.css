@@ -1,0 +1,34 @@
+.title{
+    font-style: italic;
+    font-weight:bolder;
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    margin-left:35% ;
+    margin-right:35% ;
+    background-color: #5A626A;
+    color:white
+}
+
+.author{
+    background-color: #5A626A;
+    color: white;
+    margin-right: 75%;;
+}
+h2{
+    text-align: left;
+}
+
+p{
+    text-align: left;
+    
+}
+
+.body{
+    background-color: slategray;
+}
+
+.commentLink{
+    color: gold;
+}
+

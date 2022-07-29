@@ -1,0 +1,15 @@
+h1{
+    text-align: center;
+    color: white
+}
+body{text-align: left;}
+
+.navLink{
+    color: lavender;
+    font-family: 'Lato', sans-serif ;
+}
+
+.body{ 
+    text-align: left;
+    background-color: slategray;
+}

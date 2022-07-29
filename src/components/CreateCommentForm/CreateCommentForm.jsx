@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
+import { Button } from 'react-bootstrap'
 export const CreateCommentForm = () => {
     let { postId } = useParams()
     const [user, setUser] = useState(getUser())
@@ -33,6 +34,7 @@ export const CreateCommentForm = () => {
           value={createComment.content}
           name="content"
           onChange={handleCommentChange}
+          placeholder='what would you like to say'
         />
         <input
           type="hidden"
@@ -40,7 +42,7 @@ export const CreateCommentForm = () => {
           name="author"
           onChange={handleCommentChange}
         />
-        <button type="submit">SUBMIT</button>
+        <Button type="submit">SUBMIT</Button>
       </form></>
   )
 }
