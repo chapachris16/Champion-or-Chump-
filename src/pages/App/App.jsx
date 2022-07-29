@@ -8,7 +8,7 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import PostListPage from '../PostList/PostListPage';
-import { CreatePostForm } from '../../components/CreatePostForm';
+import { CreatePostForm } from '../../components/CreatePostForm/CreatePostForm';
 import { CommentDetail } from '../CommentDetail/CommentDetail';
 
 

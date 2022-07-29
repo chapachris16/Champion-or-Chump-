@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { getUser } from "../utilities/users-service";
+import { getUser } from "../../utilities/users-service";
+import { Button }from 'react-bootstrap'
+import './CreatePostForm.css'
 // const axios = require('axios').default
 export const CreatePostForm = () => {
   const [user, setUser] = useState(getUser())
@@ -37,8 +39,9 @@ export const CreatePostForm = () => {
   
   return (
     <>
+    <h1 className="postHeading">Creating</h1>
       <form onSubmit={handleSubmit}>
-        Title
+        <label>Title</label>
         <input
           type="text"
           value={form.title}
@@ -51,6 +54,7 @@ export const CreatePostForm = () => {
           name="ign"
           onChange={handleChange}
         />
+        <label>What would you like to post?</label>
         <input
           type="text"
           value={form.content}
@@ -69,7 +73,7 @@ export const CreatePostForm = () => {
           name="created"
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
+        <Button type="submit">SUBMIT</Button>
       </form>
     </>
   );

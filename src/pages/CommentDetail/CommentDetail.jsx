@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { getUser } from "../../utilities/users-service";
 import {Button} from 'react-bootstrap/'
+import './CommentDetail.css'
 export const CommentDetail = () => {
   let navigate = useNavigate();
   let { postId, commentId } = useParams();
@@ -38,11 +39,11 @@ export const CommentDetail = () => {
       <input type='text' name="content"></input>
     </form> : */}
     <>
-      <p>{comment.post.comments[comment.index].author}</p>
-      <p>{comment.post.comments[comment.index].content}</p>
+      <p className="author">{comment.post.comments[comment.index].author}</p>
+      <p className="content">{comment.post.comments[comment.index].content}</p>
       {user.ign === comment.post.comments[comment.index].author ? (
         <>
-          <Button variant='contained' onClick={deleteComment}>Delete This Comment?</Button>
+          <Button variant='primary' onClick={deleteComment}>Delete This Comment?</Button>
           {/* <button onClick={editComment}>Edit This Comment?</button> */}
         </>
       ) : (

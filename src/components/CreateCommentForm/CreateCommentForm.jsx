@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
 import { Button } from 'react-bootstrap'
+import './CreateCommentForm.css'
 export const CreateCommentForm = () => {
     let { postId } = useParams()
     const [user, setUser] = useState(getUser())
