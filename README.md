@@ -24,7 +24,7 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 1. Clone repository
 
 ```shell
-git clone https://github.com/chapachris16/Champion-or-Chump-.git
+git clone https://github.com/chapachris16/Social-Corner.git
 ```
 
 3. Install dependencies via npm
@@ -50,3 +50,11 @@ npm start
 ```shell
 nodemon server
 ```
+
+# ICEBOX
+
+- Implement Material UI for styling 
+- Add feature to have a friends list
+- Search for other Users
+
+
