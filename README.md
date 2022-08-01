@@ -18,7 +18,7 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 
 ## Screenshots
 Login Screen
-<img src='https://imgur.com/BMtjMsQ'>
+<img src='https://i.imgur.com/BMtjMsQ.png'>
 
 ## TECHNOLOGIES USED
 
