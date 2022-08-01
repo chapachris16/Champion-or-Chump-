@@ -17,9 +17,8 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 - AAU Users have full CRUD on their own posts and can create/delete comments only that they created 
 
 ## Screenshots
-
 Login Screen
-![Login Screen](https://imgur.com/BMtjMsQ)
+<img src='https://imgur.com/BMtjMsQ'>
 
 ## TECHNOLOGIES USED
 
