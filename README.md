@@ -28,11 +28,11 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 
 ### Create Post
 
-<img src='https://i.imgur.com/1wtFCn9.png'
+<img src='https://i.imgur.com/1wtFCn9.png'>
 
 ### News Feed
 
-<img src='https://i.imgur.com/3qaHTX8.png'
+<img src='https://i.imgur.com/3qaHTX8.png'>
 
 ## TECHNOLOGIES USED
 
