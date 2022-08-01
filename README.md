@@ -14,8 +14,39 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 
 ## TECHNOLOGIES USED
 
-Front-End: React, React-Bootstrap, CSS
-Back-End: Node Js, Express, MongoDB
+**Front-End:** React, React-Bootstrap, CSS
+
+**Back-End:** Node Js, Express, MongoDB
 
 
+## Installation
 
+1. Clone repository
+
+```shell
+git clone https://github.com/chapachris16/Champion-or-Chump-.git
+```
+
+3. Install dependencies via npm
+
+```shell
+npm i
+```
+
+4. Install Build
+
+```shell
+npm run Build
+```
+
+5. Start Client
+
+```shell
+npm start
+```
+
+6. Start Server
+
+```shell
+nodemon server
+```
