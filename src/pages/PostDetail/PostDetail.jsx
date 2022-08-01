@@ -61,22 +61,23 @@ export const PostDetail = () => {
     :
     <>
         <h2 className='title'>{post.title}</h2>
-        <h2 className='author'>Posted by: <strong>{post.ign}</strong></h2>
+        <h2 className='author'>Posted by: <strong>{post.user}</strong></h2>
         <p>{post.content}</p>
        
         
          {comment ? <CreateCommentForm/> : <>{post.comments.map((post) => { 
         return (
             <div key={post.id}>
-                <h6>{post.author} commented</h6>
+                
+                <h6><strong>{post.author}</strong> commented</h6>
                 <Link className='commentLink'to={`/posts/${postId}/comments/${post._id}`}>{post.content}</Link>
                 
             </div>
         )
-      })} <Button className='button' onClick={renderCommentForm}>add comment</Button></>}
-        <p>Likes:{post.likes} <br/> <Button onClick={likePost}>Like Post</Button> </p>
+      })} <Button className='commentButton' onClick={renderCommentForm}>add comment</Button></>}
+        <p className='likeButtons'>Likes:{post.likes} <br/> <Button onClick={likePost}>Like Post</Button> </p>
        
-        <p>Dislikes:{post.dislikes}<br/><Button onClick={dislikePost}>Dislike Post</Button></p>
+        <p className='likeButtons'>Dislikes:{post.dislikes}<br/><Button onClick={dislikePost}>Dislike Post</Button></p>
         { user.ign === post.ign ?
         <>
         <Button className='button'variant='primary'onClick={deletePost}>Delete Post</Button>

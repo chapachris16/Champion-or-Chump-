@@ -10,6 +10,9 @@ import { getUser } from '../../utilities/users-service';
 import PostListPage from '../PostList/PostListPage';
 import { CreatePostForm } from '../../components/CreatePostForm/CreatePostForm';
 import { CommentDetail } from '../CommentDetail/CommentDetail';
+import { CarsPostListPage } from '../PostList/CarsPostListPage';
+import { LifePostListPage } from '../PostList/LifePostListPage';
+import { GamingPostListPage } from '../PostList/GamingPostListPage copy';
 
 
 export default function App() {
@@ -21,12 +24,17 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser}/>
           <Routes>
+
             <Route path='/orders/new' element={<NewOrderPage/>} />
+            <Route path='/posts/gaming' element={<GamingPostListPage/>} />
+            <Route path='/posts/cars' element={<CarsPostListPage/>} />
+            <Route path='/posts/life' element={<LifePostListPage/>} />
             <Route path='/posts' element={<PostListPage/>} />
             <Route path='/posts/create' element={<CreatePostForm/>} />
             <Route path='/posts/:postId' element={<PostDetail/>} />
             <Route path='/posts/:postId/comments/:commentId' element={<CommentDetail/>} />
           </Routes>
+         
         </>
         :
         <AuthPage setUser={setUser}/>

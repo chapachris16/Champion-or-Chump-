@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
 import { getUser } from '../../utilities/users-service'
+import { Button , Form, Row} from 'react-bootstrap'
 
 export const EditPostForm = () => {
     let { postId } = useParams()
@@ -36,14 +37,17 @@ export const EditPostForm = () => {
     if (!post) return null
   return (
     <>
-        <form onSubmit={handleSubmit}>
-        Title
+        <Form onSubmit={handleSubmit}>
+        <label>Title</label>
+        
         <input
           type="text"
           value={post.title}
           name="title"
           onChange={handleChange}
         />
+        
+        <label>Content</label>
         <input
           type="text"
           value={post.content}
@@ -62,8 +66,8 @@ export const EditPostForm = () => {
           name="created"
           onChange={handleChange}
         />
-        <button type="submit">SUBMIT</button>
-      </form>
+        <Button type="submit">SUBMIT</Button>
+      </Form>
     </>
   )
 }

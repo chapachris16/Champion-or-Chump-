@@ -58,19 +58,6 @@ async function deleteComment(req, res) {
     }); 
 }
 
-// async function editComment(req, res) {
-//     try {
-//         const post = await Post.findByIdAndUpdate(
-//             req.params.postId,
-//             index = post.comments((comment) => comments.id === req.params.commentId),
-//             {$set: {post.comments[index]: 1}},
-//             {new: true}
-//         )
-//         res.json(post)
-//     } catch (err) {
-//         res.status(400).json(err)
-//     }
-// }
 
 async function findComment(req, res) {
   Post.findById(req.params.postId)

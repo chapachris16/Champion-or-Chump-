@@ -13,8 +13,12 @@ export default function NavBar({user, setUser}){
     return (
         <Navbar className="nav" bg='secondary'expand='lg'>
             <Container>
-              Welcome, {user.name}
-            &nbsp; | &nbsp;<Link className="link" to='/posts'>Posts</Link>
+            <div className='siteName'>The Social Corner</div> &nbsp;| &nbsp; &nbsp;
+            Welcome, {user.name} &nbsp; &nbsp;
+            &nbsp; | &nbsp;<Link className="link" to='/posts'>All Posts</Link>
+            &nbsp; | &nbsp;<Link className="link" to='/posts/gaming'>Gaming Posts</Link>
+            &nbsp; | &nbsp;<Link className="link" to='/posts/cars'>Car Posts</Link>
+            &nbsp; | &nbsp;<Link className="link" to='/posts/life'>Life Posts</Link>
             &nbsp; | &nbsp;
             <Link className='link'to='/posts/create'>Create Posts</Link>
             &nbsp; | &nbsp;

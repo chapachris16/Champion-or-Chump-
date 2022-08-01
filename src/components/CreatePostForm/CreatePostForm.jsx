@@ -16,7 +16,8 @@ export const CreatePostForm = () => {
     ign: user.ign,
     created: new Date(),
     comments: [],
-    tag: 'driving'
+    tag: '',
+    user: user.name
   });
   
   const createPost = () => {
@@ -61,6 +62,12 @@ export const CreatePostForm = () => {
           name="ign"
           onChange={handleChange}
         />
+        <input
+          type="hidden"
+          value={form.user}
+          name="user"
+          onChange={handleChange}
+        />
         <label>What would you like to post?</label>
         <input
           type="text"
@@ -68,6 +75,16 @@ export const CreatePostForm = () => {
           name="content"
           onChange={handleChange}
         />
+        <label>Select a tag for your post</label>
+        <select
+          value={form.tag}
+          name="tag"
+          onChange={handleChange}>
+          <option value=''></option>
+          <option value='gaming'>Gaming</option>
+          <option value='cars'>Cars</option>
+          <option value='life'>Life</option>
+        </select>
         <input
           type="hidden"
           value={form.likes}

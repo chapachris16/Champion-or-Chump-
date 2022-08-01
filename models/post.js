@@ -10,6 +10,7 @@ const commentSchema = new Schema(
 
 const PostSchema = new Schema(
     {
+        user: {type:String, required: true},
         title:{type:String, required: true},
         content: {type:String, required: true},
         likes: {type:Number, default:0},

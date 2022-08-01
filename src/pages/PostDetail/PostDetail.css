@@ -6,14 +6,13 @@
     margin-top: 30px;
     margin-left:35% ;
     margin-right:35% ;
-    background-color: #5A626A;
-    color:white
+    color:black
 }
 
 .author{
-    background-color: #5A626A;
-    color: white;
+    color: black;
     text-align: center;
+    margin-bottom: 5%;
 }
 h2{
     text-align: left;
@@ -28,5 +27,14 @@ p{
 
 .commentLink{
     color: black;
+    font-size: 25px;
+}
+
+.likeButtons{
+    margin-left: 0%
+}
+.commentButton{
+    margin-bottom: 3%;
+    margin-top: 3%
 }
 

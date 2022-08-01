@@ -10,7 +10,8 @@ export const CreateCommentForm = () => {
     const [user, setUser] = useState(getUser())
     const [createComment, setCreateComment] = useState({
         content:'',
-        author: user.ign
+        author: user.ign,
+        user: user.name
     })
     const addComment = async () => {
         await axios.post(`/api/posts/${postId}/comments`, createComment).then((comment) => {
@@ -20,7 +21,7 @@ export const CreateCommentForm = () => {
     function handleCommentSubmit(e) {
         e.preventDefault()
         addComment()
-        setCreateComment({author: user.ign, content: ''})
+        setCreateComment({author: user.ign, content: '', user: user.name})
         
     }
 
@@ -40,6 +41,12 @@ export const CreateCommentForm = () => {
         <input
           type="hidden"
           value={createComment.author}
+          name="author"
+          onChange={handleCommentChange}
+        />
+        <input
+          type="hidden"
+          value={createComment.user}
           name="author"
           onChange={handleCommentChange}
         />
