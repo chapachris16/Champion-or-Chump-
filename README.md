@@ -1,6 +1,10 @@
 # **SOCIAL CORNER**
 
+# Deployed Site
 
+```shell
+https://social-corner.herokuapp.com/
+```
 
 ## INTRODUCTION
 Social Corner is a social site to post about cars, gaming, and life updates. I built this site in hopes that my friends and I can use it casually and maybe with time I can grow it to something grander.
@@ -11,6 +15,11 @@ Social Corner is a social site to post about cars, gaming, and life updates. I b
 - AAU Users will have the ability to create comments and posts that include tags to separate the different kinds of posts from each other
 - AAU Users can like and dislike posts 
 - AAU Users have full CRUD on their own posts and can create/delete comments only that they created 
+
+## Screenshots
+
+Login Screen
+![Login Screen](https://imgur.com/BMtjMsQ)
 
 ## TECHNOLOGIES USED
 
