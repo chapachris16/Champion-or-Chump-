@@ -114,7 +114,7 @@ export default class SignUpForm extends Component {
 
         <p className="error-message">&nbsp;{this.state.error}</p>
 
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" disabled={disable}>
           Submit
         </Button>
       </Form>
