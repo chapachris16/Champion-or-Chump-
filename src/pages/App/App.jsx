@@ -1,7 +1,5 @@
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
-import NewOrderPage from '../NewOrderPage/NewOrderPage';
-import OrderHistoryPage from '../PostList/PostListPage';
 import { PostDetail } from '../PostDetail/PostDetail';
 import NavBar from '../../components/NavBar/NavBar';
 import { useState } from 'react';
