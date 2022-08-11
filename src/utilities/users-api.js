@@ -5,7 +5,7 @@ import { getToken } from "./users-service";
 const BASE_URL = '/api/users';
 
 export function signUp(userData) {
-  return sendRequest(BASE_URL, 'POST', userData)
+  return sendRequest(`${BASE_URL}/signup`, 'POST', userData)
 }
 
 export function login(credentials) {
@@ -31,7 +31,7 @@ async function sendRequest(url, method = 'GET', payload = null) {
     // Prefacing with 'Bearer' is recommended in the HTTP specification
     options.headers.Authorization = `Bearer ${token}`
   }
-  const res = await fetch(url, options)
+  const res = await fetch (url, options)
   if (res.ok) return res.json()
   throw new Error('Bad Request')
 }
