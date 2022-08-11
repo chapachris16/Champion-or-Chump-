@@ -18,9 +18,9 @@ export function checkToken(){
 
 // HELPER FUNCTION
 async function sendRequest(url, method = 'GET', payload = null) {
-  const options = {method};
+  const options = { method };
   if (payload) {
-    options.headers = {'Content-Type': 'application/json'}
+    options.headers = { 'Content-Type': 'application/json' }
     options.body = JSON.stringify(payload)
   }
   const token = getToken()
