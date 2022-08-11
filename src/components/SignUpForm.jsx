@@ -57,7 +57,7 @@ export default class SignUpForm extends Component {
       //     </form>
       // </div>
       // <p className="error-message">&nbsp;{this.state.error}</p>
-      // // </div>
+      // </div>
       <Form onSubmit={this.handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} controlId="formGridEmail">
@@ -87,6 +87,7 @@ export default class SignUpForm extends Component {
           <Form.Group as={Col} className="mb-3" controlId="formGridPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
+              type="password"
               placeholder="Enter your password"
               name="password"
               value={this.state.password}
@@ -97,6 +98,7 @@ export default class SignUpForm extends Component {
           <Form.Group as={Col} className="mb-3" controlId="formGridConfirmPassword">
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
+              type='password'
               placeholder="Re-enter your password"
               name="confirm"
               value={this.state.confirm}
